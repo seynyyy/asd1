@@ -67,4 +67,31 @@ def merge_sort(arr: list[int]) -> (list[int] | None):
     for index in range(left_size):
         left_array[index] = arr[index]
     for index in range(left_size, right_size):
-        
+        right_array[index-left_size] = arr[index]
+
+    merge_sort(left_array)
+    merge_sort(right_array)
+
+def merge(merge_array:list[int], left_array: list[int], right_array: list[int]) -> None:
+    left_index = 0
+    right_index = 0
+    target_index = 0
+
+
+    count = len(left_array) + len(right_array)
+
+    while count > 0:
+        if left_index >= len(left_array):
+            merge_array[target_index] = right_array[right_index]
+            right_index+=1
+        elif right_index >= len(right_array):
+            merge_array[target_index] = left_array[left_index]
+            left_index+=1
+        elif left_array[left_index] < right_array[right_index]:
+            merge_array = left_array[left_index]
+            left_index+=1
+        else:
+            merge_array[target_index] = right_array[right_index]
+            right_index+=1
+        target_index+=1
+        count-=1
