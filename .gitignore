@@ -1,0 +1,32 @@
+# Byte-code files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# IDE-specific files and directories
+.idea/  # For PyCharm
+.vscode/ # For VS Code
+*.swp
+*.swo
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-line.txt
+
+# OS-specific files
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Sensitive files (e.g., environment variables)
+.env
