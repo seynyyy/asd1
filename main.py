@@ -49,35 +49,6 @@ def find_common_elements_binary(arr_a: list[int], arr_b_sorted: list[int]) -> li
             common.append(elem)
     return common
 
-def print_complexity_analysis():
-    """Виводить аналіз складності алгоритмів"""
-    print("\n" + "="*80)
-    print("АНАЛІЗ СКЛАДНОСТІ АЛГОРИТМІВ (O-нотація)")
-    print("="*80)
-    
-    print("\nАЛГОРИТМИ СОРТУВАННЯ:")
-    print("-" * 80)
-    print(f"{'Алгоритм':<25} {'Найкращий':<15} {'Середній':<15} {'Найгірший':<15}")
-    print("-" * 80)
-    print(f"{'Bubble Sort':<25} {'O(n)':<15} {'O(n²)':<15} {'O(n²)':<15}")
-    print(f"{'Merge Sort':<25} {'O(n log n)':<15} {'O(n log n)':<15} {'O(n log n)':<15}")
-    print(f"{'Timsort (Python)':<25} {'O(n)':<15} {'O(n log n)':<15} {'O(n log n)':<15}")
-    
-    print("\nАЛГОРИТМИ ПОШУКУ:")
-    print("-" * 80)
-    print(f"{'Алгоритм':<25} {'Найкращий':<15} {'Середній':<15} {'Найгірший':<15}")
-    print("-" * 80)
-    print(f"{'Linear Search':<25} {'O(1)':<15} {'O(n)':<15} {'O(n)':<15}")
-    print(f"{'Binary Search':<25} {'O(1)':<15} {'O(log n)':<15} {'O(log n)':<15}")
-    
-    print("\nПОЯСНЕННЯ:")
-    print("-" * 80)
-    print("• Timsort - гібридний алгоритм (Merge Sort + Insertion Sort)")
-    print("• Binary Search працює тільки на відсортованих масивах")
-    print("• Merge Sort має стабільну складність O(n log n) для всіх випадків")
-    print("• Bubble Sort неефективний на великих масивах через O(n²) складність")
-    print("="*80 + "\n")
-
 def linear_search(arr: list[int], key: int) -> int:
     """
     Лінійний пошук
@@ -309,12 +280,6 @@ if __name__ == "__main__":
     
     print(tabulate(search_results_table, headers=search_results_headers, tablefmt="github"))
     
-    print("\n📊 АНАЛІЗ РЕЗУЛЬТАТІВ ПОШУКУ:")
-    print("-" * 80)
-    print("• Бінарний пошук значно ефективніший на відсортованих масивах")
-    print("• Час бінарного пошуку O(log n) не залежить від позиції елемента")
-    print("• Лінійний пошук O(n) найшвидший для елементів на початку масиву")
-    print("• На масиві з 10000 елементів бінарний пошук у середньому в 100+ разів швидший")
     print("-" * 80 + "\n")
     
     # Створення масивів А і В для індивідуального завдання
@@ -372,15 +337,5 @@ if __name__ == "__main__":
     
     print("ТАБЛИЦЯ РЕЗУЛЬТАТІВ ПОШУКУ:")
     print(tabulate(search_table, headers=search_headers, tablefmt="github"))
-    
-    # Аналіз складності
-    print_complexity_analysis()
-    
-    print("\nВИСНОВКИ:")
-    print("="*80)
-    print("1. Timsort є найефективнішим алгоритмом сортування для різних випадків")
-    print("2. Merge Sort показує стабільну продуктивність O(n log n)")
-    print("3. Bubble Sort неефективний на великих масивах через O(n²)")
-    print("4. Бінарний пошук значно швидший за лінійний на відсортованих масивах")
-    print("5. Комбінація сортування + бінарного пошуку ефективна для багаторазового пошуку")
+
     print("="*80 + "\n")
